@@ -1,7 +1,6 @@
 *** Setting ***
 Resource                           page_login.robot
-
-
+Resource                           page_client.robot
 *** Variables ***
 ${dashboard_pg_label_dashboard}    Dashboard
 
@@ -25,3 +24,19 @@ perform logout
                                    click element                               ${logout_submenu}
                                    Wait Until Page Contains                    ${login_pg_label_login}
 
+click link dashboard
+                                   Wait Until Page Contains Element            ${dashboard_pg_label_dashboard}
+                                   click element                               ${left_menu_dashboard}
+
+click link client
+                                   Wait Until Page Contains Element            ${left_menu_client}
+                                   click element                               ${left_menu_client}
+                                   Wait Until Page Contains                    ${client_pg_label}
+
+click link bedroom
+                                   Wait Until Page Contains Element            ${left_menu_bedroom}
+                                   click element                               ${left_menu_bedroom}
+
+click link user
+                                   Wait Until Page Contains Element            ${left_menu_user}
+                                   click element                               ${left_menu_user}
