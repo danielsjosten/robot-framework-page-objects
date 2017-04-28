@@ -1,6 +1,7 @@
 *** Setting ***
 Resource                           page_login.robot
 Resource                           page_client.robot
+Resource                           page_bedroom.robot
 *** Variables ***
 ${dashboard_pg_label_dashboard}    Dashboard
 
@@ -36,6 +37,7 @@ click link client
 click link bedroom
                                    Wait Until Page Contains Element            ${left_menu_bedroom}
                                    click element                               ${left_menu_bedroom}
+                                   Wait Until Page Contains                    ${bedroom_pg_label}
 
 click link user
                                    Wait Until Page Contains Element            ${left_menu_user}
