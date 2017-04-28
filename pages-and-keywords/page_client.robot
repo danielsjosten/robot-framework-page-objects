@@ -1,46 +1,53 @@
 *** Setting ***
-
+Library                                    OperatingSystem
+Library                                    Selenium2Library
+Library                                    String
 
 
 *** Variables ***
-${client_pg_label}          Create New Client
+${client_pg_label}                         Create New Client
 
-${btn_create_new_client}    xpath=//a[@class='dropdown-toggle']
+${btn_create_new_client}                   xpath=//*[@id="j_idt49"]/a[1]
 
 
 #Form
-${left_menu_dashboard}      xpath=//*[@id="side-menu"]/li[2]/a
-${left_menu_bedroom}        xpath=//*[@id="side-menu"]/li[3]/a
-${left_menu_bill}           xpath=//*[@id="side-menu"]/li[4]/a
-${left_menu_client}         xpath=//*[@id="side-menu"]/li[5]/a
-${left_menu_reservation}    xpath=//*[@id="side-menu"]/li[6]/a
-${left_menu_user}           xpath=//*[@id="side-menu"]/li[7]/a
+${client_form_name}                        id=name
+${client_form_email}                       id=email
+${client_form_gender_male}                 id=gender:0
+${client_form_socialsecuritynr}            id=socialSecurityNumber
+${btn_client_form_save}                    xpath=//a[text()='Save']
+${btn_client_delete}                       xpath=//a[text()='Delete']
 
+
+${client_was_created}                      Client was successfully created.
+${client_was_deleted}                      Client was successfully deleted.
 
 
 
 *** Keywords ***
-click create new client
-                            Wait Until Page Contains               ${client_pg_label}
-                            Click Element                          xpath=//*[@id="j_idt49"]/a[1]
 
-                            # #Create New Client
-                            # Click Element                        xpath=//*[@id="side-menu"]/li[5]/a
-                            # Wait Until Page Contains             List
-                            # Click Element                        xpath=//*[@id="j_idt49"]/a[1]
-                            # Wait Until Page Contains             Create New Client
-                            # ${client_name} =                     Generate Random String                 10                 [LOWER]
-                            # Input Text                           id=name                                ${client_name}
-                            # ${client_email}=                     Catenate                               SEPARATOR=         ${client_name}    @email.com
-                            # Input Text                           id=email                               ${client_email}
-                            # Select Checkbox                      id=gender:0
-                            # ${ssn}=                              Generate Random String                 7                  [NUMBERS]
-                            # Input Text                           id=socialSecurityNumber                ${ssn}
-                            # Click Element                        xpath=//a[text()='Save']
-                            # Wait Until Page Contains             Client was successfully created.
-                            # Click Element                        xpath=//a[text()='Delete']
-                            # Wait Until Page Contains             Client was successfully deleted.
-                            # Log To Console                       The users was successfully deleted!
-                            # 1
+click create new client
+                                           Wait Until Page Contains            ${client_pg_label}
+                                           Click Element                       ${btn_create_new_client}
+
+Fill in credentials for client and save
+                                           Wait Until Page Contains            ${client_pg_label}
+                                           #Generate random name
+                                           ${client_name} =                    Generate Random String             10                 [LOWER]
+                                           Input Text                          ${client_form_name}                ${client_name}
+                                           #Generate random email based on previous name
+                                           ${client_email}=                    Catenate                           SEPARATOR=         ${client_name}    @email.com
+                                           Input Text                          ${client_form_email}               ${client_email}
+                                           Select Checkbox                     ${client_form_gender_male}
+                                           #Generate random number
+                                           ${ssn}=                             Generate Random String             7                  [NUMBERS]
+                                           Input Text                          ${client_form_socialsecuritynr}    ${ssn}
+                                           Click Element                       ${btn_client_form_save}
+                                           Wait Until Page Contains            ${client_was_created}
+
+ Delete client that was created
+                                           Click Element                       ${btn_client_delete}
+                                           Wait Until Page Contains            ${client_was_deleted}
+
 
 
