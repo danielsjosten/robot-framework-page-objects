@@ -60,6 +60,12 @@ Test Check if a specific user exists in the client list
                                                                                                       Perform Logout
 
 
+# Delete a specific client from list
+
+                                                                                                      # Test Case Valid Login
+                                                                                                      # Click link client
+                                                                                                      # Delete an existing client from the list
+                                                                                                      # Perform Logout
 
 
 

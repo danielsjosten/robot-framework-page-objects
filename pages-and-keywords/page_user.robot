@@ -43,11 +43,11 @@ Check that the first dropdown is set as admin
                                                  Should Contain                                     ${dropdown_1_}                           ${admin}
 
 Fill in the user credentials
-                                                 ${user_name}=                                      Generate Random String                   8                            [LOWER]
+                                                 ${user_name}=                                      Generate Random String                   8                                       [LOWER]
                                                  Input Text                                         ${user_form_login}                       ${user_name}
 
                                                  #Random Password
-                                                 ${user_password}=                                  Generate Random String                   7                            [NUMBERS]
+                                                 ${user_password}=                                  Generate Random String                   7                                       [NUMBERS]
                                                  Input Text                                         ${user_form_password}                    ${user_password}
                                                  Input Text                                         ${user_form_password_retype}             ${user_password}
 
@@ -75,9 +75,6 @@ Delete the user that was created
                                                  Wait Until Page Contains                           ${user_was_deleted}
 
 
-
-
-                                
 
 
 

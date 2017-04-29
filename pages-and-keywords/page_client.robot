@@ -64,6 +64,11 @@ Check if client is in clientlist
                                                    Should Contain                                   ${Ele}                             ${name_in_list}                         msg=No client with that exact name!    values=False
 
 
+ Delete an existing client from the list
+
+                                                   ${test}=                                         get table cell                     //*[@id="j_idt49"]/table/tbody          Select From List By Label              Daniel
+                                                   log to console                                   ${test}
+
 
 
 
