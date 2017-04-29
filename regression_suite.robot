@@ -24,10 +24,18 @@ Test Case Valid Login And Logout
 Test Case Invalid Login
                                                                                                       Test Case Invalid Login
 
+Assert that the dashboard-links are working
+                                                                                                      Test Case Valid Login
+                                                                                                      Click dashboard link bedrooms
+                                                                                                      Click dashboard link bills
+                                                                                                      Click dashboard link clients
+                                                                                                      Click dashboard link reservations
+                                                                                                      Perform Logout
+
 
 Create new client and delete
                                                                                                       Test Case Valid Login
-                                                                                                      click link client
+                                                                                                      click left-link client
                                                                                                       click create new client
                                                                                                       Fill in credentials for client and save
                                                                                                       Delete client that was created
@@ -36,7 +44,7 @@ Create new client and delete
 
 Test create new Bedroom and delete
                                                                                                       Test Case Valid Login
-                                                                                                      Click link bedroom
+                                                                                                      Click left-link bedroom
                                                                                                       Click create new bedroom
                                                                                                       Fill in the credentials for the room
                                                                                                       Delete the room that was created
@@ -45,7 +53,7 @@ Test create new Bedroom and delete
 # !!! There must be a client with name Daniel for the testcase below to work, it's a precondition!
 Test create new user and delete
                                                                                                       Test Case Valid Login
-                                                                                                      Click link user
+                                                                                                      Click left-link user
                                                                                                       Click create new user
                                                                                                       Check that the first dropdown is set as admin
                                                                                                       Fill in the user credentials
@@ -55,17 +63,9 @@ Test create new user and delete
 
 Test Check if a specific user exists in the client list
                                                                                                       Test Case Valid Login
-                                                                                                      Click link client
+                                                                                                      Click left-link client
                                                                                                       Check if client is in clientlist
                                                                                                       Perform Logout
-
-
-# Delete a specific client from list
-
-                                                                                                      # Test Case Valid Login
-                                                                                                      # Click link client
-                                                                                                      # Delete an existing client from the list
-                                                                                                      # Perform Logout
 
 
 
