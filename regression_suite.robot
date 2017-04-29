@@ -8,6 +8,7 @@ Resource                              ./pages-and-keywords/page_login.robot
 Resource                              ./pages-and-keywords/page_dashboard.robot
 Resource                              ./pages-and-keywords/page_client.robot
 Resource                              ./pages-and-keywords/page_bedroom.robot
+Resource                              ./pages-and-keywords/page_user.robot
 
 Test Setup                            Setup
 Test Teardown                         Teardown
@@ -41,7 +42,14 @@ Test create new Bedroom and delete
                                       Delete the room that was created
                                       Perform Logout
 
-
+Test create new user and delete
+                                      Test Case Valid Login
+                                      Click link user
+                                      Click create new user
+                                      Check that the first dropdown is set as admin
+                                      Fill in the user credentials
+                                      Delete the user that was created
+                                      Perform Logout
 
 
 

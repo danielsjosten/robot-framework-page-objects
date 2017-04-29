@@ -2,6 +2,7 @@
 Resource                           page_login.robot
 Resource                           page_client.robot
 Resource                           page_bedroom.robot
+Resource                           page_user.robot
 *** Variables ***
 ${dashboard_pg_label_dashboard}    Dashboard
 
@@ -20,25 +21,26 @@ ${left_menu_user}                  xpath=//*[@id="side-menu"]/li[7]/a
 *** Keywords ***
 perform logout
                                    Wait Until Page Contains Element            ${logout_menu}
-                                   click element                               ${logout_menu}
+                                   Click Element                               ${logout_menu}
                                    Wait Until Page Contains Element            ${logout_submenu}
-                                   click element                               ${logout_submenu}
+                                   Click Element                               ${logout_submenu}
                                    Wait Until Page Contains                    ${login_pg_label_login}
 
 click link dashboard
                                    Wait Until Page Contains Element            ${dashboard_pg_label_dashboard}
-                                   click element                               ${left_menu_dashboard}
+                                   Click Element                               ${left_menu_dashboard}
 
 click link client
                                    Wait Until Page Contains Element            ${left_menu_client}
-                                   click element                               ${left_menu_client}
+                                   Click Element                               ${left_menu_client}
                                    Wait Until Page Contains                    ${client_pg_label}
 
 click link bedroom
                                    Wait Until Page Contains Element            ${left_menu_bedroom}
-                                   click element                               ${left_menu_bedroom}
+                                   Click Element                               ${left_menu_bedroom}
                                    Wait Until Page Contains                    ${bedroom_pg_label}
 
 click link user
                                    Wait Until Page Contains Element            ${left_menu_user}
-                                   click element                               ${left_menu_user}
+                                   Click Element                               ${left_menu_user}
+                                   Wait Until Page Contains                    ${usr_pg_lbl}
