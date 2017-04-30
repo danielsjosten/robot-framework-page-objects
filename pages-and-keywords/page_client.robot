@@ -69,7 +69,7 @@ Check if client is in clientlist
                                                          ${Ele}=                                                                                  Get Text                            ${client_table}
                                                          Log To Console                                                                           \n${Ele}
                                                          Should Contain                                                                           ${Ele}                              ${name_in_list}    msg=No client with that exact name!    values=False
-
+                                                         
 
 Create client Daniel
                                                          Wait Until Page Contains                                                                 ${client_pg_label}

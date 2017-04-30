@@ -54,7 +54,7 @@ Test create new Bedroom and delete
 
 
 
-Test Check if a specific user exists in the client list
+Test Check if a specific client exists in the client list
                                                                       Test Case Valid Login
                                                                       Click left-link client
                                                                       Check if client is in clientlist
