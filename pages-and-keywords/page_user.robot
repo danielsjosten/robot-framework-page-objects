@@ -28,7 +28,7 @@ ${user_form_status_dropdown_inactive}            xpath=//*[@id="j_idt50:userStat
 ${user_was_created}                              User was successfully created.
 ${user_was_deleted}                              User was successfully deleted.
 
-
+${user_form_client_dropdown_name}=               Daniel
 
 
 
@@ -43,11 +43,11 @@ Check that the first dropdown is set as admin
                                                  Should Contain                                     ${dropdown_1_}                           ${admin}
 
 Fill in the user credentials
-                                                 ${user_name}=                                      Generate Random String                   8                                       [LOWER]
+                                                 ${user_name}=                                      Generate Random String                   8                                    [LOWER]
                                                  Input Text                                         ${user_form_login}                       ${user_name}
 
                                                  #Random Password
-                                                 ${user_password}=                                  Generate Random String                   7                                       [NUMBERS]
+                                                 ${user_password}=                                  Generate Random String                   7                                    [NUMBERS]
                                                  Input Text                                         ${user_form_password}                    ${user_password}
                                                  Input Text                                         ${user_form_password_retype}             ${user_password}
 
@@ -55,7 +55,7 @@ Fill in the user credentials
                                                  #Select client Daniel from dropdown
                                                  Click Element                                      ${user_form_client_dropdown}
                                                  Wait Until Page Contains Element                   ${user_form_client_dropdown_index1}
-                                                 Select From List By Label                          ${user_form_client_dropdown}             Daniel
+                                                 Select From List By Label                          ${user_form_client_dropdown}             ${user_form_client_dropdown_name}
 
                                                  #Select status Active
                                                  Click Element                                      ${user_form_user_status_dropdown}

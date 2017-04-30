@@ -28,7 +28,7 @@ ${bedroom_form_dropdown_2_top_twin}        //*[@id="typeBedroomId"]/option[4]
 ${bedroom_form_dropdown_2_top_king}        //*[@id="typeBedroomId"]/option[5]
 ${bedroom_form_dropdown_2_wheelchair}      //*[@id="typeBedroomId"]/option[6]
 
-#Form data
+#Form testdata
 ${bedroom_data_description}                testroom
 ${bedroom_data_floor}                      3
 ${bedroom_data_roomnumber}                 301

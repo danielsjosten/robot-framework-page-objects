@@ -60,24 +60,24 @@ click left-link user
 
 
 Click dashboard link bedrooms
-                                      Wait Until Page Contains                                           ${dashboard_pg_label_dashboard}
+                                      Wait Until Page Contains                                                  ${dashboard_pg_label_dashboard}
                                       Click Element                                                             ${dashboard_show_all_bedrooms}
                                       Wait Until Page Contains                                                  ${bedroom_pg_label}
                                       Click Element                                                             ${left_menu_dashboard}
 
 Click dashboard link bills
-                                      Wait Until Page Contains                                           ${dashboard_pg_label_dashboard}
+                                      Wait Until Page Contains                                                  ${dashboard_pg_label_dashboard}
                                       Click Element                                                             ${dashboard_show_all_bills}
                                       Wait Until Page Contains                                                  ${bills_pg_label}
                                       Click Element                                                             ${left_menu_dashboard}
 
 Click dashboard link clients
-                                      Wait Until Page Contains                                           ${dashboard_pg_label_dashboard}
+                                      Wait Until Page Contains                                                  ${dashboard_pg_label_dashboard}
                                       Click Element                                                             ${dashboard_show_all_clients}
                                       Wait Until Page Contains                                                  ${client_pg_label}
                                       Click Element                                                             ${left_menu_dashboard}
 Click dashboard link reservations
-                                      Wait Until Page Contains                                           ${dashboard_pg_label_dashboard}
+                                      Wait Until Page Contains                                                  ${dashboard_pg_label_dashboard}
                                       Click Element                                                             ${dashboard_show_all_reservations}
                                       Wait Until Page Contains                                                  ${reservation_pg_label}
                                       Click Element                                                             ${left_menu_dashboard}
