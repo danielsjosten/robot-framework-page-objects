@@ -7,6 +7,7 @@ Library                                                  String
 *** Variables ***
 ${client_pg_label}                                       Create New Client
 
+${client_table}                                          xpath=//*[@id="j_idt49"]/table/tbody
 ${btn_create_new_client}                                 xpath=//*[@id="j_idt49"]/a[1]
 
 
@@ -41,14 +42,14 @@ click create new client
 Fill in credentials for client and save
                                                          Wait Until Page Contains                                                                 ${client_pg_label}
                                                          #Generate random name
-                                                         ${client_name} =                                                                         Generate Random String              10                                      [LOWER]
+                                                         ${client_name} =                                                                         Generate Random String              10                 [LOWER]
                                                          Input Text                                                                               ${client_form_name}                 ${client_name}
                                                          #Generate random email based on previous name
-                                                         ${client_email}=                                                                         Catenate                            SEPARATOR=                              ${client_name}                         ${@email}
+                                                         ${client_email}=                                                                         Catenate                            SEPARATOR=         ${client_name}                         ${@email}
                                                          Input Text                                                                               ${client_form_email}                ${client_email}
                                                          Select Checkbox                                                                          ${client_form_gender_male}
                                                          #Generate random number
-                                                         ${ssn}=                                                                                  Generate Random String              7                                       [NUMBERS]
+                                                         ${ssn}=                                                                                  Generate Random String              7                  [NUMBERS]
                                                          Input Text                                                                               ${client_form_socialsecuritynr}     ${ssn}
                                                          Click Element                                                                            ${btn_client_form_save}
                                                          Wait Until Page Contains                                                                 ${client_was_created}
@@ -65,28 +66,32 @@ Fill in credentials for client and save
 #Test if a specific client is in the client list
 Check if client is in clientlist
 
-                                                         ${Ele}=                                                                                  Get Text                            xpath=//*[@id="j_idt49"]/table/tbody
+                                                         ${Ele}=                                                                                  Get Text                            ${client_table}
                                                          Log To Console                                                                           \n${Ele}
-                                                         Should Contain                                                                           ${Ele}                              ${name_in_list}                         msg=No client with that exact name!    values=False
+                                                         Should Contain                                                                           ${Ele}                              ${name_in_list}    msg=No client with that exact name!    values=False
 
 
 Create client Daniel
                                                          Wait Until Page Contains                                                                 ${client_pg_label}
                                                          Input Text                                                                               ${client_form_name}                 ${client_name}
                                                          #Generate random email based on previous name
-                                                         ${client_email}=                                                                         Catenate                            SEPARATOR=                              ${client_name}                         ${@email}
+                                                         ${client_email}=                                                                         Catenate                            SEPARATOR=         ${client_name}                         ${@email}
                                                          Input Text                                                                               ${client_form_email}                ${client_email}
                                                          Select Checkbox                                                                          ${client_form_gender_male}
                                                          #Generate random number
-                                                         ${ssn}=                                                                                  Generate Random String              7                                       [NUMBERS]
+                                                         ${ssn}=                                                                                  Generate Random String              7                  [NUMBERS]
                                                          Input Text                                                                               ${client_form_socialsecuritynr}     ${ssn}
                                                          Click Element                                                                            ${btn_client_form_save}
                                                          Wait Until Page Contains                                                                 ${client_was_created}
 
 
 Delete client Daniel from list
+
                                                          Click Element                                                                            ${delete_btn_client_name_daniel}
                                                          Wait Until Page Contains                                                                 ${client_was_deleted}
+
+
+
 
 
 

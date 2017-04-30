@@ -15,7 +15,7 @@ Setup
                     Location Should be                            ${base_url}
 
                     Delete all cookies
-                    
+
 
 Teardown
                     Close all Browsers
