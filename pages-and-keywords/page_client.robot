@@ -29,8 +29,8 @@ ${@email}=                                               @email.com
 
 
 #Uses dynamic xpath since it looks for name
-#Daniel in the list and then goes to the deletebutton
-${delete_btn_client_name_daniel}                         xpath=//*[@id='j_idt49']/table/tbody/tr[td//text()[contains(., 'Daniel')]]/td[7]/a[3]
+#Daniel in the list and then goes to the deletebutton for that row
+${delete_btn_client_name_daniel}                         xpath=//*[@id='j_idt49']/table/tbody/tr[td//text()[contains(., '${client_name}')]]/td[7]/a[3]
 
 
 *** Keywords ***
